@@ -20,12 +20,20 @@ FenPrincipale::FenPrincipale()
 
     protections = new QCheckBox("Protéger le &header contre les inclusions multiples");
     protections->setChecked(true);
+    header = new QLineEdit;
+    header->setText("HEADER_");
+    header->setVisible(true);
     genererConstructeur = new QCheckBox("Générer un &constructeur par défaut");
     genererConstructeur->setChecked(true);
     genererDestructeur = new QCheckBox("Générer un &destructeur");
 
+    /*Header*/
+    QHBoxLayout *headerLayout = new QHBoxLayout;
+    headerLayout->addWidget(protections);
+    headerLayout->addWidget(header);
+
     QVBoxLayout *optionsLayout = new QVBoxLayout;
-    optionsLayout->addWidget(protections);
+    optionsLayout->addLayout(headerLayout);
     optionsLayout->addWidget(genererConstructeur);
     optionsLayout->addWidget(genererDestructeur);
 
@@ -78,6 +86,8 @@ FenPrincipale::FenPrincipale()
 
 
     // Connexions des signaux et des slots
+    connect(nom, SIGNAL(textChanged(QString)), this, SLOT(genererHeader(QString)));
+    connect(protections, SIGNAL(stateChanged(int)), this, SLOT(voirHeader()));
     connect(quitter, SIGNAL(clicked()), qApp, SLOT(quit()));
     connect(generer, SIGNAL(clicked()), this, SLOT(genererCode()));
 
@@ -161,4 +171,26 @@ void FenPrincipale::genererCode()
     // On crée puis affiche la fenêtre qui affichera le code généré, qu'on lui envoie en paramètre
     FenCodeGenere *fenetreCode = new FenCodeGenere(code, codecpp, titre, this);
     fenetreCode->exec();
+}
+
+void FenPrincipale::genererHeader(const QString &nomClasse)
+{
+    //On remplit le champ header pour aperçu et modif possible
+    header->setText(QString("HEADER_") + nomClasse.toUpper());
+}
+
+void FenPrincipale::voirHeader()
+{
+    //Affichage ou non du champs d'aperçu du header
+
+    if (protections->isChecked())
+    {
+        //On génçre un header
+        header->show();
+    }
+    else
+    {
+        //On ne génère pas de header
+        header->hide();
+    }
 }

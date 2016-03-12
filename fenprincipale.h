@@ -14,11 +14,14 @@ class FenPrincipale : public QWidget
 
     private slots:
         void genererCode();
+        void genererHeader(const QString &nomClasse);
+        void voirHeader();
 
     private:
         QLineEdit *nom;
         QLineEdit *classeMere;
         QCheckBox *protections;
+        QLineEdit *header;
         QCheckBox *genererConstructeur;
         QCheckBox *genererDestructeur;
         QGroupBox *groupCommentaires;
