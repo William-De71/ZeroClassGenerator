@@ -1,74 +1,77 @@
+# ZeroClassGenerator
+
 TP : ZEROCLASSGENERATOR
+===
 
 Je pense que le moment est bien choisi de vous exercer avec un petit TP. 
-En effet, vous avez déjà vu suffisamment de choses sur Qt pour être en mesure d'écrire dès maintenant des programmes intéressants.
+En effet, vous avez dÃ©jÃ  vu suffisamment de choses sur Qt pour Ãªtre en mesure d'Ã©crire dÃ¨s maintenant des programmes intÃ©ressants.
 
-Notre programme s'intitulera le ZeroClassGenerator un programme qui génère le code de base des classes C++ automatiquement, en fonction des options que vous choisissez !
+Notre programme s'intitulera le ZeroClassGenerator un programme qui gÃ©nÃ¨re le code de base des classes C++ automatiquement, en fonction des options que vous choisissez !
 
 Notre objectif:
 
-Ne vous laissez pas impressionner par le nom « ZeroClassGenerator ». 
-Ce TP ne sera pas bien difficile et réutilisera toutes les connaissances que vous avez apprises pour les mettre à profit dans un projet concret.
+Ne vous laissez pas impressionner par le nom Â« ZeroClassGenerator Â». 
+Ce TP ne sera pas bien difficile et rÃ©utilisera toutes les connaissances que vous avez apprises pour les mettre Ã  profit dans un projet concret.
 
-Ce TP est volontairement modulaire : je vais vous proposer de réaliser un programme de base assez simple, que je vous laisserai coder et que je corrigerai ensuite avec vous. 
-Puis, je vous proposerai un certain nombre d'améliorations intéressantes (non corrigées) pour lesquelles il faudra vous creuser un peu plus les méninges si vous êtes motivés.
+Ce TP est volontairement modulaire : je vais vous proposer de rÃ©aliser un programme de base assez simple, que je vous laisserai coder et que je corrigerai ensuite avec vous. 
+Puis, je vous proposerai un certain nombre d'amÃ©liorations intÃ©ressantes (non corrigÃ©es) pour lesquelles il faudra vous creuser un peu plus les mÃ©ninges si vous Ãªtes motivÃ©s.
 
-Notre ZeroClassGenerator est un programme qui génère le code de base des classes C++. Qu'est-ce que cela veut dire ?
-Un générateur de classes C++
-Ce programme est un outil graphique qui va créer automatiquement le code source d'une classe en fonction des options que vous aurez choisies.
-Vous n'avez jamais remarqué que les classes avaient en général une structure de base similaire, qu'il fallait réécrire à chaque fois ? C'est un peu laborieux parfois.
-Rien que pour cela, il serait pratique d'avoir un programme capable de générer le squelette de la classe, de définir les portées public, protected et private, de définir un constructeur par défaut et un destructeur, etc.
-Nous allons réaliser une GUI (une fenêtre) contenant plusieurs options.
+Notre ZeroClassGenerator est un programme qui gÃ©nÃ¨re le code de base des classes C++. Qu'est-ce que cela veut dire ?
+Un gÃ©nÃ©rateur de classes C++
+Ce programme est un outil graphique qui va crÃ©er automatiquement le code source d'une classe en fonction des options que vous aurez choisies.
+Vous n'avez jamais remarquÃ© que les classes avaient en gÃ©nÃ©ral une structure de base similaire, qu'il fallait rÃ©Ã©crire Ã  chaque fois ? C'est un peu laborieux parfois.
+Rien que pour cela, il serait pratique d'avoir un programme capable de gÃ©nÃ©rer le squelette de la classe, de dÃ©finir les portÃ©es public, protected et private, de dÃ©finir un constructeur par dÃ©faut et un destructeur, etc.
+Nous allons rÃ©aliser une GUI (une fenÃªtre) contenant plusieurs options.
 
-L'utilisateur renseigne obligatoirement le champ « Nom », pour indiquer le nom de la classe. Il peut aussi donner le nom de la classe mère.
-On propose quelques cases à cocher pour choisir des options comme « Protéger le header contre les inclusions multiples ». 
-Cela consiste à placer les lignes qui commencent par un # comme #ifndef et qui évitent que le même fichier .h puisse être inclus deux fois dans un même programme.
-Enfin, on donne la possibilité d'ajouter des commentaires en haut du fichier pour indiquer l'auteur, la date de création et le rôle de la classe. 
-C'est une bonne habitude, en effet, que de commenter un peu le début de ses classes pour avoir une idée de ce à quoi elle sert.
-Lorsqu'on clique sur le bouton « Générer » en bas, une nouvelle fenêtre s'ouvre (une QDialog). 
-Elle affiche le code généré dans un QTextEdit et vous pouvez à partir de là copier/coller ce code dans votre IDE comme Code::Blocks ou Qt Creator.
-C'est un début et je vous proposerai à la fin du chapitre des améliorations intéressantes à ajouter à ce programme. 
-Essayez déjà de réaliser cela correctement, cela représente un peu de travail, je peux vous le dire!
+L'utilisateur renseigne obligatoirement le champ Â« Nom Â», pour indiquer le nom de la classe. Il peut aussi donner le nom de la classe mÃ¨re.
+On propose quelques cases Ã  cocher pour choisir des options comme Â« ProtÃ©ger le header contre les inclusions multiples Â». 
+Cela consiste Ã  placer les lignes qui commencent par un # comme #ifndef et qui Ã©vitent que le mÃªme fichier .h puisse Ãªtre inclus deux fois dans un mÃªme programme.
+Enfin, on donne la possibilitÃ© d'ajouter des commentaires en haut du fichier pour indiquer l'auteur, la date de crÃ©ation et le rÃ´le de la classe. 
+C'est une bonne habitude, en effet, que de commenter un peu le dÃ©but de ses classes pour avoir une idÃ©e de ce Ã  quoi elle sert.
+Lorsqu'on clique sur le bouton Â« GÃ©nÃ©rer Â» en bas, une nouvelle fenÃªtre s'ouvre (une QDialog). 
+Elle affiche le code gÃ©nÃ©rÃ© dans un QTextEdit et vous pouvez Ã  partir de lÃ  copier/coller ce code dans votre IDE comme Code::Blocks ou Qt Creator.
+C'est un dÃ©but et je vous proposerai Ã  la fin du chapitre des amÃ©liorations intÃ©ressantes Ã  ajouter Ã  ce programme. 
+Essayez dÃ©jÃ  de rÃ©aliser cela correctement, cela reprÃ©sente un peu de travail, je peux vous le dire!
 
 Quelques conseils techniques:
 
-Avant de vous lâcher tels des fauves dans la jungle, je voudrais vous donner quelques conseils techniques pour vous guider un peu.
+Avant de vous lÃ¢cher tels des fauves dans la jungle, je voudrais vous donner quelques conseils techniques pour vous guider un peu.
 
 Architecture du projet:
 
-Je vous recommande de faire une classe par fenêtre. Comme on a deux fenêtres et qu'on met toujours le main à part, cela fait cinq fichiers :
+Je vous recommande de faire une classe par fenÃªtre. Comme on a deux fenÃªtres et qu'on met toujours le main Ã  part, cela fait cinq fichiers :
 
-	- main.cpp : contiendra uniquement le main qui ouvre la fenêtre principale (très court) ;
-	- FenPrincipale.h : header de la fenêtre principale ;
-	- FenPrincipale.cpp : implémentation des méthodes de la fenêtre principale ;
-	- FenCodeGenere.h : header de la fenêtre secondaire qui affiche le code généré ;
-	- FenCodeGenere.cpp : implementation de ses méthodes.
+	- main.cpp : contiendra uniquement le main qui ouvre la fenÃªtre principale (trÃ¨s court) ;
+	- FenPrincipale.h : header de la fenÃªtre principale ;
+	- FenPrincipale.cpp : implÃ©mentation des mÃ©thodes de la fenÃªtre principale ;
+	- FenCodeGenere.h : header de la fenÃªtre secondaire qui affiche le code gÃ©nÃ©rÃ© ;
+	- FenCodeGenere.cpp : implementation de ses mÃ©thodes.
 	
-Pour la fenêtre principale, vous pourrez hériter de QWidget comme on l'a toujours fait, cela me semble le meilleur choix.
-Pour la fenêtre secondaire, je vous conseille d'hériter de QDialog. La fenêtre principale ouvrira la QDialog en appelant sa méthode exec().
+Pour la fenÃªtre principale, vous pourrez hÃ©riter de QWidget comme on l'a toujours fait, cela me semble le meilleur choix.
+Pour la fenÃªtre secondaire, je vous conseille d'hÃ©riter de QDialog. La fenÃªtre principale ouvrira la QDialog en appelant sa mÃ©thode exec().
 
-La fenêtre principale:
+La fenÃªtre principale:
 
-Je vous conseille très fortement d'utiliser des layouts. Mon layout principal, si vous regardez bien ma capture d'écran, est un layout vertical. Il contient des QGroupBox.
-À l'intérieur des QGroupBox, j'utilise à nouveau des layouts. Je vous laisse le choix du layout qui vous semble le plus adapté à chaque fois.
+Je vous conseille trÃ¨s fortement d'utiliser des layouts. Mon layout principal, si vous regardez bien ma capture d'Ã©cran, est un layout vertical. Il contient des QGroupBox.
+Ã€ l'intÃ©rieur des QGroupBox, j'utilise Ã  nouveau des layouts. Je vous laisse le choix du layout qui vous semble le plus adaptÃ© Ã  chaque fois.
 
-Pour le QGroupBox « Ajouter des commentaires », il faudra ajouter une case à cocher. Si cette case est cochée, les commentaires seront ajoutés. Sinon, on ne mettra pas de commentaires. 
-Renseignez-vous sur l'utilisation des cases à cocher dans les QGroupBox.
+Pour le QGroupBox Â« Ajouter des commentaires Â», il faudra ajouter une case Ã  cocher. Si cette case est cochÃ©e, les commentaires seront ajoutÃ©s. Sinon, on ne mettra pas de commentaires. 
+Renseignez-vous sur l'utilisation des cases Ã  cocher dans les QGroupBox.
 
-Pour le champ « Date de création », je vous propose d'utiliser un QDateEdit. 
-Nous n'avons pas vu ce widget au chapitre précédent mais je vous fais confiance, il est proche de la QSpinBox et, après lecture de la documentation, vous devriez savoir vous en servir sans problème.
-Vous « dessinerez » le contenu de la fenêtre dans le constructeur de FenPrincipale. 
-Pensez à faire de vos champs de formulaire des attributs de la classe (les QLineEdit, QCheckbox…), afin que toutes les autres méthodes de la classe aient accès à leur valeur.
-Lors d'un clic sur le bouton « Générer ! », appelez un slot personnalisé. Dans ce slot personnalisé (qui ne sera rien d'autre qu'une méthode de FenPrincipale), vous récupérerez toutes les informations contenues dans les champs de la fenêtre pour générer le code dans une chaîne de caractères (de type QString de préférence).
-C'est là qu'il faudra un peu réfléchir sur la génération du code mais c'est tout à fait faisable.
-Une fois le code généré, votre slot appellera la méthode exec() d'un objet de type FenCodeGenere que vous aurez créé pour l'occasion. La fenêtre du code généré s'affichera alors…
+Pour le champ Â« Date de crÃ©ation Â», je vous propose d'utiliser un QDateEdit. 
+Nous n'avons pas vu ce widget au chapitre prÃ©cÃ©dent mais je vous fais confiance, il est proche de la QSpinBox et, aprÃ¨s lecture de la documentation, vous devriez savoir vous en servir sans problÃ¨me.
+Vous Â« dessinerez Â» le contenu de la fenÃªtre dans le constructeur de FenPrincipale. 
+Pensez Ã  faire de vos champs de formulaire des attributs de la classe (les QLineEdit, QCheckboxâ€¦), afin que toutes les autres mÃ©thodes de la classe aient accÃ¨s Ã  leur valeur.
+Lors d'un clic sur le bouton Â« GÃ©nÃ©rer ! Â», appelez un slot personnalisÃ©. Dans ce slot personnalisÃ© (qui ne sera rien d'autre qu'une mÃ©thode de FenPrincipale), vous rÃ©cupÃ©rerez toutes les informations contenues dans les champs de la fenÃªtre pour gÃ©nÃ©rer le code dans une chaÃ®ne de caractÃ¨res (de type QString de prÃ©fÃ©rence).
+C'est lÃ  qu'il faudra un peu rÃ©flÃ©chir sur la gÃ©nÃ©ration du code mais c'est tout Ã  fait faisable.
+Une fois le code gÃ©nÃ©rÃ©, votre slot appellera la mÃ©thode exec() d'un objet de type FenCodeGenere que vous aurez crÃ©Ã© pour l'occasion. La fenÃªtre du code gÃ©nÃ©rÃ© s'affichera alorsâ€¦
 
-La fenêtre du code généré:
+La fenÃªtre du code gÃ©nÃ©rÃ©:
 
-Beaucoup plus simple, cette fenêtre est constituée d'un QTextEdit et d'un bouton de fermeture.
-Pour le QTextEdit, essayez de définir une police à chasse fixe (comme « Courier ») pour que cela ressemble à du code. 
+Beaucoup plus simple, cette fenÃªtre est constituÃ©e d'un QTextEdit et d'un bouton de fermeture.
+Pour le QTextEdit, essayez de dÃ©finir une police Ã  chasse fixe (comme Â« Courier Â») pour que cela ressemble Ã  du code. 
 Personnellement, j'ai rendu le QTextEdit en mode readOnly pour qu'on ne puisse pas modifier son contenu (juste le copier), mais vous faites comme vous voulez.
-Vous connecterez le bouton « Fermer » à un slot spécial de la QDialog qui demande la fermeture et qui indique que tout s'est bien passé. 
+Vous connecterez le bouton Â« Fermer Â» Ã  un slot spÃ©cial de la QDialog qui demande la fermeture et qui indique que tout s'est bien passÃ©. 
 Je vous laisse trouver dans la documentation duquel il s'agit.
-Minute euh… Comment je passe le code généré (de type QString si j'ai bien compris) à la seconde fenêtre de type QDialog ?
-Le mieux est de passer cette QString en paramètre du constructeur. Votre fenêtre récupèrera ainsi le code et n'aura plus qu'à l'afficher dans son QTextEdit !
+Minute euhâ€¦ Comment je passe le code gÃ©nÃ©rÃ© (de type QString si j'ai bien compris) Ã  la seconde fenÃªtre de type QDialog ?
+Le mieux est de passer cette QString en paramÃ¨tre du constructeur. Votre fenÃªtre rÃ©cupÃ¨rera ainsi le code et n'aura plus qu'Ã  l'afficher dans son QTextEdit !
